@@ -27,30 +27,120 @@
     <div id="projects" class="Work">
         <h2 class="work-header">Here are some projects...</h2>
 
-        <a href="https://Manuel4Short.github.io/RockPaperScissors/" target="_blank" class="project">
-            <img class="project-pic" src="https://user-images.githubusercontent.com/45731476/133845970-c0c2bffb-35a0-4bac-9e25-05af4703fb47.png" alt="project">
-            <div class="project-title">Rock Paper Scissors</div>
-        </a>
-        
-        <a href="https://manuel4short.github.io/digital-clock/" target="_blank" class="project">
-            <img class="project-pic" src="https://github.com/user-attachments/assets/5c882135-36a3-44cd-931f-c1f146759bde" alt="project">
-            <div class="project-title">Digital clock</div>
-        </a>
+        <div class="projects-toolbar">
+            <p class="projects-count" id="projects-count">Showing 0 of 0 projects</p>
+            <button type="button" id="toggle-all-projects" class="toolbar-btn">
+                <i class="fas fa-eye-slash"></i> <span>Hide all websites</span>
+            </button>
+        </div>
 
-        <a href="https://manuel4short.github.io/E-fifa/" target="_blank" class="project">
-            <img class="project-pic" src="https://github.com/user-attachments/assets/f61441b7-bb81-4968-b097-89adc1f13917" alt="E-fifa">
-            <div class="project-title">E-fifa Soccer Tips</div>
-        </a>
+        <div class="project-card" data-id="rock-paper-scissors" data-title="Rock Paper Scissors">
+            <a href="https://Manuel4Short.github.io/RockPaperScissors/" target="_blank" rel="noopener noreferrer" class="project">
+                <img class="project-pic" src="https://user-images.githubusercontent.com/45731476/133845970-c0c2bffb-35a0-4bac-9e25-05af4703fb47.png" alt="Rock Paper Scissors">
+                <div class="project-title">Rock Paper Scissors</div>
+            </a>
+            <button type="button" class="hide-btn" aria-label="Hide Rock Paper Scissors"><i class="fas fa-eye-slash"></i></button>
+        </div>
         
-        <a href=" https://manuel4short.github.io/Temperature-converter/" target="_blank" class="project ">
-            <img class="project-pic" src="https://github.com/user-attachments/assets/c9baa432-a176-43e4-945e-d121d47fdb49" alt="project">
-            <div class="project-title">Temperature-converter</div>
-        </a>
+        <div class="project-card" data-id="digital-clock" data-title="Digital clock">
+            <a href="https://manuel4short.github.io/digital-clock/" target="_blank" rel="noopener noreferrer" class="project">
+                <img class="project-pic" src="https://github.com/user-attachments/assets/5c882135-36a3-44cd-931f-c1f146759bde" alt="Digital clock">
+                <div class="project-title">Digital clock</div>
+            </a>
+            <button type="button" class="hide-btn" aria-label="Hide Digital clock"><i class="fas fa-eye-slash"></i></button>
+        </div>
+
+        <div class="project-card" data-id="e-fifa" data-title="E-fifa Soccer Tips">
+            <a href="https://manuel4short.github.io/E-fifa/" target="_blank" rel="noopener noreferrer" class="project">
+                <img class="project-pic" src="https://github.com/user-attachments/assets/f61441b7-bb81-4968-b097-89adc1f13917" alt="E-fifa Soccer Tips">
+                <div class="project-title">E-fifa Soccer Tips</div>
+            </a>
+            <button type="button" class="hide-btn" aria-label="Hide E-fifa Soccer Tips"><i class="fas fa-eye-slash"></i></button>
+        </div>
+        
+        <div class="project-card" data-id="temperature-converter" data-title="Temperature-converter">
+            <a href="https://manuel4short.github.io/Temperature-converter/" target="_blank" rel="noopener noreferrer" class="project">
+                <img class="project-pic" src="https://github.com/user-attachments/assets/c9baa432-a176-43e4-945e-d121d47fdb49" alt="Temperature-converter">
+                <div class="project-title">Temperature-converter</div>
+            </a>
+            <button type="button" class="hide-btn" aria-label="Hide Temperature-converter"><i class="fas fa-eye-slash"></i></button>
+        </div>
        
-        <a href="https://manuel4short.github.io/random-quote-generator/" target="_blank" class="project ">
-            <img class="project-pic" src="https://github.com/user-attachments/assets/245ccc1e-384c-4170-bfa2-2385f3809b46" alt="project">
-            <div class="project-title">Random Quote Generator</div>
-        </a>
+        <div class="project-card" data-id="random-quote-generator" data-title="Random Quote Generator">
+            <a href="https://manuel4short.github.io/random-quote-generator/" target="_blank" rel="noopener noreferrer" class="project">
+                <img class="project-pic" src="https://github.com/user-attachments/assets/245ccc1e-384c-4170-bfa2-2385f3809b46" alt="Random Quote Generator">
+                <div class="project-title">Random Quote Generator</div>
+            </a>
+            <button type="button" class="hide-btn" aria-label="Hide Random Quote Generator"><i class="fas fa-eye-slash"></i></button>
+        </div>
+
+        <!-- ===== Projects hosted on Coolify (self-hosted production apps) ===== -->
+        <div class="section-label">
+            <span class="section-label-chip"><i class="fas fa-server"></i> Self-hosted &middot; Deployed with Coolify</span>
+        </div>
+
+        <div class="project-card" data-id="prime-store-hq" data-title="PrimeStore HQ">
+            <a href="https://primestorehq.com/" target="_blank" rel="noopener noreferrer" class="project">
+                <img class="project-pic" src="images/prime-store.jpg" alt="PrimeStore HQ">
+                <div class="project-title">PrimeStore HQ</div>
+                <div class="project-stack">React &middot; Vite</div>
+            </a>
+            <button type="button" class="hide-btn" aria-label="Hide PrimeStore HQ"><i class="fas fa-eye-slash"></i></button>
+        </div>
+
+        <div class="project-card" data-id="prime-store-api" data-title="PrimeStore API" data-hidden="true">
+            <a href="https://api.primestorehq.com/" target="_blank" rel="noopener noreferrer" class="project">
+                <img class="project-pic" src="images/prime-store-api.jpg" alt="PrimeStore API">
+                <div class="project-title">PrimeStore API</div>
+                <div class="project-stack">Laravel &middot; REST API</div>
+            </a>
+            <button type="button" class="hide-btn" aria-label="Hide PrimeStore API"><i class="fas fa-eye-slash"></i></button>
+        </div>
+
+        <div class="project-card" data-id="greenrelics" data-title="GreenRelics">
+            <a href="https://wordpress-m15t6cooukqixoyclfmgldrc.167.233.58.57.sslip.io/" target="_blank" rel="noopener noreferrer" class="project">
+                <img class="project-pic" src="images/greenrelics.jpg" alt="GreenRelics">
+                <div class="project-title">GreenRelics</div>
+                <div class="project-stack">WordPress &middot; WooCommerce</div>
+            </a>
+            <button type="button" class="hide-btn" aria-label="Hide GreenRelics"><i class="fas fa-eye-slash"></i></button>
+        </div>
+
+        <div class="project-card" data-id="booking-site" data-title="Booking Site">
+            <a href="https://wordpress-rpirkr17atrwo9g7hxhj8igg.167.233.58.57.sslip.io/" target="_blank" rel="noopener noreferrer" class="project">
+                <img class="project-pic" src="images/booking-site.jpg" alt="Booking Site">
+                <div class="project-title">Booking Site</div>
+                <div class="project-stack">WordPress &middot; Amelia</div>
+            </a>
+            <button type="button" class="hide-btn" aria-label="Hide Booking Site"><i class="fas fa-eye-slash"></i></button>
+        </div>
+
+        <!-- Shown, but does not link to a website (internal tool) -->
+        <div class="project-card" data-id="n8n-automation" data-title="n8n Automation">
+            <div class="project project--nolink">
+                <img class="project-pic" src="images/n8n-automation.jpg" alt="n8n Automation">
+                <div class="project-title">n8n Automation</div>
+                <div class="project-stack">n8n &middot; Workflows</div>
+                <span class="project-badge">No public link</span>
+            </div>
+            <button type="button" class="hide-btn" aria-label="Hide n8n Automation"><i class="fas fa-eye-slash"></i></button>
+        </div>
+
+        <!-- Hidden by default, and does not link to a website (internal tool) -->
+        <div class="project-card" data-id="evolution-api" data-title="Evolution API" data-hidden="true">
+            <div class="project project--nolink">
+                <img class="project-pic" src="images/evolution-api.jpg" alt="Evolution API">
+                <div class="project-title">Evolution API</div>
+                <div class="project-stack">WhatsApp &middot; Evolution v2</div>
+                <span class="project-badge">No public link</span>
+            </div>
+            <button type="button" class="hide-btn" aria-label="Hide Evolution API"><i class="fas fa-eye-slash"></i></button>
+        </div>
+
+        <div id="hidden-tray" class="hidden-tray" hidden>
+            <h3 class="hidden-tray-title">Hidden projects</h3>
+            <ul id="hidden-list" class="hidden-list"></ul>
+        </div>
 
     </div>
     <div id="contact" class="contact">
@@ -87,6 +177,166 @@
 
     <script>
         document.getElementById("year").textContent = new Date().getFullYear();
+
+        (function () {
+            var STORAGE_KEY = "portfolio:hidden-projects";
+            var cards = Array.prototype.slice.call(document.querySelectorAll(".project-card"));
+            var countEl = document.getElementById("projects-count");
+            var toggleAllBtn = document.getElementById("toggle-all-projects");
+            var tray = document.getElementById("hidden-tray");
+            var list = document.getElementById("hidden-list");
+
+            function loadHidden() {
+                try {
+                    var raw = localStorage.getItem(STORAGE_KEY);
+                    var parsed = raw ? JSON.parse(raw) : null;
+                    return Array.isArray(parsed) ? parsed : null;
+                } catch (e) {
+                    return null;
+                }
+            }
+
+            function save() {
+                try {
+                    localStorage.setItem(STORAGE_KEY, JSON.stringify(hidden));
+                } catch (e) { /* storage unavailable, ignore */ }
+            }
+
+            // Start from the saved state, or fall back to data-hidden="true" in the markup
+            var hidden = loadHidden();
+            if (hidden === null) {
+                hidden = cards
+                    .filter(function (c) { return c.getAttribute("data-hidden") === "true"; })
+                    .map(function (c) { return c.getAttribute("data-id"); });
+            } else {
+                // Cards marked as hidden in the markup always stay hidden
+                cards.forEach(function (c) {
+                    var id = c.getAttribute("data-id");
+                    if (c.getAttribute("data-hidden") === "true" && hidden.indexOf(id) === -1) {
+                        hidden.push(id);
+                    }
+                });
+            }
+            save();
+
+            function isHidden(id) {
+                return hidden.indexOf(id) !== -1;
+            }
+
+            function render() {
+                var visible = 0;
+
+                cards.forEach(function (card) {
+                    var id = card.getAttribute("data-id");
+                    var title = card.getAttribute("data-title") || id;
+                    var btn = card.querySelector(".hide-btn");
+
+                    if (isHidden(id)) {
+                        card.classList.add("is-hidden");
+                        card.setAttribute("aria-hidden", "true");
+                        if (btn) {
+                            btn.innerHTML = '<i class="fas fa-eye"></i>';
+                            btn.setAttribute("aria-label", "Unhide " + title);
+                            btn.title = "Unhide " + title;
+                        }
+                    } else {
+                        card.classList.remove("is-hidden");
+                        card.removeAttribute("aria-hidden");
+                        visible++;
+                        if (btn) {
+                            btn.innerHTML = '<i class="fas fa-eye-slash"></i>';
+                            btn.setAttribute("aria-label", "Hide " + title);
+                            btn.title = "Hide " + title;
+                        }
+                    }
+                });
+
+                countEl.textContent = "Showing " + visible + " of " + cards.length + " projects";
+
+                // "Hide all" turns into "Show all" once every card is hidden
+                var allHidden = visible === 0;
+                toggleAllBtn.querySelector("span").textContent = allHidden ? "Show all websites" : "Hide all websites";
+                toggleAllBtn.querySelector("i").className = allHidden ? "fas fa-eye" : "fas fa-eye-slash";
+
+                renderTray();
+            }
+
+            // Lists the hidden projects, with a button to bring each one back
+            function renderTray() {
+                var hiddenCards = cards.filter(function (c) { return isHidden(c.getAttribute("data-id")); });
+
+                if (hiddenCards.length === 0) {
+                    tray.hidden = true;
+                    list.innerHTML = "";
+                    return;
+                }
+
+                tray.hidden = false;
+                list.innerHTML = "";
+
+                hiddenCards.forEach(function (card) {
+                    var id = card.getAttribute("data-id");
+                    var title = card.getAttribute("data-title") || id;
+
+                    var li = document.createElement("li");
+                    li.className = "hidden-item";
+
+                    var name = document.createElement("span");
+                    name.className = "hidden-item-name";
+                    name.textContent = title;
+
+                    var restore = document.createElement("button");
+                    restore.type = "button";
+                    restore.className = "hidden-item-btn";
+                    restore.innerHTML = '<i class="fas fa-eye"></i> Unhide';
+                    restore.setAttribute("aria-label", "Unhide " + title);
+                    restore.addEventListener("click", function () {
+                        hidden = hidden.filter(function (x) { return x !== id; });
+                        save();
+                        render();
+                    });
+
+                    li.appendChild(name);
+                    li.appendChild(restore);
+                    list.appendChild(li);
+                });
+            }
+
+            // Per-card hide / unhide button
+            cards.forEach(function (card) {
+                var btn = card.querySelector(".hide-btn");
+                if (!btn) return;
+                btn.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    var id = card.getAttribute("data-id");
+                    if (isHidden(id)) {
+                        hidden = hidden.filter(function (x) { return x !== id; });
+                    } else {
+                        hidden.push(id);
+                    }
+                    save();
+                    render();
+                });
+            });
+
+            // Hide / show every website at once
+            toggleAllBtn.addEventListener("click", function () {
+                var anyVisible = cards.some(function (c) { return !isHidden(c.getAttribute("data-id")); });
+                cards.forEach(function (c) {
+                    var id = c.getAttribute("data-id");
+                    if (anyVisible) {
+                        if (hidden.indexOf(id) === -1) hidden.push(id);
+                    } else {
+                        hidden = hidden.filter(function (x) { return x !== id; });
+                    }
+                });
+                save();
+                render();
+            });
+
+            render();
+        })();
     </script>
 </body>
 </html>

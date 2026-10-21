@@ -143,6 +143,224 @@ nav ul li a:hover {
 
 }
 
+/* Label above a group of projects (e.g. the Coolify hosted apps) */
+.section-label {
+    margin: 30px auto 0;
+    max-width: 900px;
+    text-align: center;
+}
+
+.section-label-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.82em;
+    font-weight: bold;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--celadon);
+    background: var(--caput-mortuum);
+    border-radius: 50px;
+    padding: 7px 18px;
+}
+
+.section-label-chip i {
+    font-size: 1.05em;
+}
+
+/* Tech stack line under a project title */
+.project-stack {
+    font-size: 0.78em;
+    letter-spacing: 0.03em;
+    text-align: center;
+    padding: 6px 10px 9px;
+    background: var(--celadon);
+    color: var(--caput-mortuum);
+    opacity: 0.85;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/* Projects Toolbar */
+.projects-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 0 auto 10px;
+    max-width: 700px;
+}
+
+.projects-count {
+    font-size: 0.9em;
+    color: var(--caput-mortuum);
+    opacity: 0.85;
+    margin: 0;
+}
+
+.toolbar-btn {
+    font-family: inherit;
+    font-size: 0.85em;
+    font-weight: bold;
+    color: white;
+    background: var(--caput-mortuum);
+    border: 2px solid var(--caput-mortuum);
+    border-radius: 50px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.toolbar-btn:hover {
+    background: var(--moss-green);
+    border-color: var(--moss-green);
+    transform: translateY(-2px);
+}
+
+/* Project Card Wrapper (holds the card plus its hide button) */
+.project-card {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 40px 20px;
+}
+
+.project-card .project {
+    margin: 0;
+}
+
+/* Hide / Unhide button on each card */
+.hide-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    z-index: 2;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--caput-mortuum);
+    background: rgba(255, 255, 255, 0.92);
+    border: 2px solid var(--caput-mortuum);
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.25s ease, background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.project-card:hover .hide-btn,
+.hide-btn:focus {
+    opacity: 1;
+}
+
+/* Always show the button on touch devices, where there is no hover */
+@media (hover: none) {
+    .hide-btn {
+        opacity: 1;
+    }
+}
+
+.hide-btn:hover {
+    background: var(--caput-mortuum);
+    color: white;
+    transform: scale(1.1);
+}
+
+/* A card that has been hidden */
+.project-card.is-hidden {
+    display: none;
+}
+
+/* Card that is shown but does not link anywhere */
+.project--nolink {
+    cursor: default;
+    position: relative;
+}
+
+.project--nolink:hover {
+    transform: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 2px solid var(--caput-mortuum);
+}
+
+.project-badge {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    z-index: 1;
+    font-size: 0.68em;
+    font-weight: bold;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: white;
+    background: rgba(68, 34, 32, 0.85);
+    border-radius: 50px;
+    padding: 4px 10px;
+}
+
+/* Tray listing the hidden projects */
+.hidden-tray {
+    max-width: 700px;
+    margin: 30px auto 10px;
+    padding: 20px 25px;
+    background: rgba(255, 255, 255, 0.55);
+    border: 2px dashed var(--caput-mortuum);
+    border-radius: 12px;
+    text-align: left;
+}
+
+.hidden-tray-title {
+    margin: 0 0 12px;
+    font-size: 1em;
+    color: var(--caput-mortuum);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.hidden-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.hidden-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 7px 0;
+    border-bottom: 1px solid rgba(68, 34, 32, 0.2);
+}
+
+.hidden-item:last-child {
+    border-bottom: none;
+}
+
+.hidden-item-name {
+    font-size: 0.95em;
+    color: var(--dark-purple);
+}
+
+.hidden-item-btn {
+    font-family: inherit;
+    font-size: 0.78em;
+    font-weight: bold;
+    color: white;
+    background: var(--moss-green);
+    border: none;
+    border-radius: 50px;
+    padding: 6px 14px;
+    cursor: pointer;
+    transition: background 0.25s ease, transform 0.2s ease;
+}
+
+.hidden-item-btn:hover {
+    background: var(--caput-mortuum);
+    transform: scale(1.05);
+}
+
 
 
 
