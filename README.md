@@ -27,12 +27,9 @@ with Traefik handling HTTPS and the `sslip.io` wildcard DNS.
 
 | Project | Stack | Link |
 | --- | --- | --- |
-| PrimeStore HQ | React · Vite | https://primestorehq.com/ |
-| PrimeStore API | Laravel · REST API | https://api.primestorehq.com/ |
+| PrimeStore HQ | React · Vite · Laravel API | https://primestorehq.com/ |
 | GreenRelics | WordPress · WooCommerce | https://wordpress-m15t6cooukqixoyclfmgldrc.167.233.58.57.sslip.io/ |
 | Booking Site | WordPress · Amelia | https://wordpress-rpirkr17atrwo9g7hxhj8igg.167.233.58.57.sslip.io/ |
-| n8n Automation | n8n · Workflows | _no public link_ |
-| Evolution API | WhatsApp · Evolution v2 | _no public link_ |
 
 ## Features
 

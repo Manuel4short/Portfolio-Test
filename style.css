@@ -273,33 +273,6 @@ nav ul li a:hover {
     display: none;
 }
 
-/* Card that is shown but does not link anywhere */
-.project--nolink {
-    cursor: default;
-    position: relative;
-}
-
-.project--nolink:hover {
-    transform: none;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border: 2px solid var(--caput-mortuum);
-}
-
-.project-badge {
-    position: absolute;
-    top: 8px;
-    left: 8px;
-    z-index: 1;
-    font-size: 0.68em;
-    font-weight: bold;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: white;
-    background: rgba(68, 34, 32, 0.85);
-    border-radius: 50px;
-    padding: 4px 10px;
-}
-
 /* Tray listing the hidden projects */
 .hidden-tray {
     max-width: 700px;
