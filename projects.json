@@ -13,6 +13,11 @@
     "random-quote-generator"
   ],
   "order": [
+    "rock-paper-scissors",
+    "digital-clock",
+    "e-fifa",
+    "temperature-converter",
+    "random-quote-generator",
     "prime-store-hq",
     "greenrelics",
     "booking-site"
