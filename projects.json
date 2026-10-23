@@ -1,0 +1,24 @@
+{
+  "_comment": "Central control file for the portfolio. Edit THIS file (not index.html) to show/hide a card. Ids match the data-id attributes on the .project-card elements in index.html. The hosted apps keep running on Coolify - hiding a card only removes it from this listing.",
+  "_liveSites": [
+    "prime-store-hq",
+    "greenrelics",
+    "booking-site"
+  ],
+  "hidden": [
+    "rock-paper-scissors",
+    "digital-clock",
+    "e-fifa",
+    "temperature-converter",
+    "random-quote-generator"
+  ],
+  "order": [
+    "prime-store-hq",
+    "greenrelics",
+    "booking-site"
+  ],
+  "checkLinks": true,
+  "proxy": "https://r.jina.ai/",
+  "timeoutMs": 20000,
+  "proxyTimeoutMs": 30000
+}

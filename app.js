@@ -410,9 +410,9 @@
 
         var hiddenCards = cards.filter(function (c) {
             var id = idOf(c);
-            // Projects that are not part of the portfolio at all are not
-            // offered in the tray - they are simply not listed.
-            if (!isAllowed(id)) return false;
+            // Every hidden card in the DOM is offered in the tray so the
+            // visitor can bring it back - even projects that are not in
+            // _liveSites (those are hidden by default via projects.json).
             return isHidden(id);
         });
 
