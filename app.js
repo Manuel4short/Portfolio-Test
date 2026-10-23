@@ -343,21 +343,6 @@
             var title = titleOf(card);
             var btn = card.querySelector(".hide-btn");
 
-            // A project that is not part of the portfolio is removed from the
-            // page completely - it is not offered in the tray either.
-            if (!isAllowed(id)) {
-                card.classList.add("is-hidden");
-                card.classList.remove("is-offline");
-                card.removeAttribute("data-offline");
-                card.setAttribute("aria-hidden", "true");
-                if (btn) {
-                    btn.innerHTML = '<i class="fas fa-eye"></i>';
-                    btn.setAttribute("aria-label", "Unhide " + title);
-                    btn.title = "Unhide " + title;
-                }
-                return;
-            }
-
             if (isHidden(id)) {
                 card.classList.add("is-hidden");
                 card.removeAttribute("aria-hidden");
@@ -678,7 +663,7 @@
                     if (down.length) {
                         setStatus(down.length + (down.length === 1 ? " website did not answer" : " websites did not answer") + " and " + (down.length === 1 ? "is" : "are") + " marked as offline.");
                     } else {
-                        setStatus("All " + targets.length + " websites are online.");
+                        setStatus("");
                     }
                 });
             })
