@@ -39,6 +39,7 @@
 
     var globalHidden = [];   // hidden for every visitor (projects.json)
     var localHidden = [];    // hidden by this visitor (localStorage)
+    var localUnhidden = [];  // unhidden by this visitor, overrides globalHidden (localStorage)
     var offlineIds = [];     // removed because the live site did not answer
     var sectionLabels = [];  // the section headings that group the cards
 
@@ -71,7 +72,17 @@
         try {
             var raw = localStorage.getItem(STORAGE_KEY);
             var parsed = raw ? JSON.parse(raw) : null;
-            return Array.isArray(parsed) ? parsed : [];
+            if (!parsed) return [];
+
+            // Backwards compatibility: old format stored a plain array of
+            // hidden ids. New format stores { hidden: [...], unhidden: [...] }.
+            if (Array.isArray(parsed)) {
+                localUnhidden = [];
+                return parsed;
+            }
+
+            localUnhidden = Array.isArray(parsed.unhidden) ? parsed.unhidden : [];
+            return Array.isArray(parsed.hidden) ? parsed.hidden : [];
         } catch (e) {
             return [];
         }
@@ -79,7 +90,10 @@
 
     function saveLocal() {
         try {
-            localStorage.setItem(STORAGE_KEY, JSON.stringify(localHidden));
+            localStorage.setItem(STORAGE_KEY, JSON.stringify({
+                hidden: localHidden,
+                unhidden: localUnhidden
+            }));
         } catch (e) { /* storage unavailable - ignore */ }
     }
 
@@ -94,6 +108,8 @@
     // not be reached is not "hidden" - it stays in place and is dimmed,
     // so a temporary network problem never makes a project disappear.
     function isHidden(id) {
+        // A visitor's explicit unhide always wins over the owner's global hide.
+        if (localUnhidden.indexOf(id) !== -1) return false;
         return globalHidden.indexOf(id) !== -1 ||
             localHidden.indexOf(id) !== -1;
     }
@@ -430,6 +446,8 @@
                 localHidden = localHidden.filter(function (x) { return x !== id; });
                 globalHidden = globalHidden.filter(function (x) { return x !== id; });
                 offlineIds = offlineIds.filter(function (x) { return x !== id; });
+                // Remember the choice so it survives a page reload.
+                if (localUnhidden.indexOf(id) === -1) localUnhidden.push(id);
                 saveLocal();
                 render();
             });
@@ -543,8 +561,12 @@
                     // listed (dimmed as offline) so nothing is lost.
                     localHidden = localHidden.filter(function (x) { return x !== id; });
                     globalHidden = globalHidden.filter(function (x) { return x !== id; });
+                    // Remember the choice so it survives a page reload even
+                    // when globalHidden is reset from projects.json.
+                    if (localUnhidden.indexOf(id) === -1) localUnhidden.push(id);
                 } else {
                     localHidden.push(id);
+                    localUnhidden = localUnhidden.filter(function (x) { return x !== id; });
                 }
 
                 saveLocal();
